@@ -13,6 +13,8 @@ import java.util.Map;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 
+
+import org.jsoup.nodes.Document;
 import org.jsoup.Jsoup;
 import org.jsoup.safety.Whitelist;
 import org.slf4j.Logger;
@@ -776,21 +778,24 @@ public class EgovArticleController {
 	    testxxxxx = testxxxxx.replaceAll("&quot;", "\"");
 	    
 	    
-	    String boardNttCn = Jsoup.clean(testxxxxx, Whitelist.relaxed()
+	    String boardNttCn = Jsoup.clean(testxxxxx,"http://localhost", Whitelist.basic().preserveRelativeLinks(true)    		
 	    		.addTags("img")
-	    		.addAttributes("img", "style")
-	    		.addAttributes("img", "src")
+	    		.addAttributes("img", "align", "alt", "height", "src", "title", "width", "style")
 	    		.addProtocols("img", "src", "http", "https")
+	    		,new Document.OutputSettings().prettyPrint(false)	    		
 	    		);
+	    
 	    board.setNttCn(boardNttCn);
 	    
-	    /** 리스트 스킨 분기 
+	    /*
+	     * 리스트 스킨 분기 
 	     * 각 쿼리도 스킨분기에 맞춰서 같이 분기시켜주세요.
 	     * 기존에 하나의 유형이어서 하나의 쿼리로 커버 됬었지만 우리는 여러 유형으로 나눠서
 	     * 기존쿼리 그냥 바꿔버리면 다른사람들 쪽에서 오류 납니다.
 	     * 서로 방해되지 않게 그냥 스킨별로 나눠버립시다.
 	     * 각자 만드는 게시판 SELECT 쿼리 제외하고는 스킨별로 나눠주세요.
-	     * 쿼리 명명은 insertSkin1Article 의 식으로 가운데에 스킨명 넣어주세요.*/
+	     * 쿼리 명명은 insertSkin1Article 의 식으로 가운데에 스킨명 넣어주세요.
+	     */
 	    
 		if(master.getBbsTyCode().equals("SKIN01")) {
 			
