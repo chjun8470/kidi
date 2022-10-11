@@ -5,7 +5,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<title>eGovFrame Potal 온라인 지원 포탈</title>
+<title>한국섬진흥원</title>
 <link href="<c:url value='/css/egovframework/com/com.css' />" rel="stylesheet" type="text/css" />
 
 <script language="javascript">
@@ -22,7 +22,7 @@ function fncGoAfterErrorPage(){
 	<p style="font-size: 18px; color: #000; margin-bottom: 10px; "><img width="236px" height="65px" src="<c:url value='/images/egovframework/com/cmm/main/lob_logo.png'/>" alt="egovframe" /></p>
 	<div style="border: 0px solid #666; padding: 20px;">
 		<!-- 404 -->
-		<p style="color:red; margin-bottom: 8px; ">404 Error99999999</p>
+		<p style="color:red; margin-bottom: 8px; ">404 Error</p>
 
 		<div class="boxType1" style="width: 500px;">
 			<div class="box">

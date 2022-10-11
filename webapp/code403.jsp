@@ -2,10 +2,10 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 <!DOCTYPE html>
-<html>
-<head lang="en">
+<html lang="en">
+<head>
 <meta charset="utf-8">
-<title>한국섬진흥원</title>
+<title>한국섬진흥원_403 Error</title>
 <link href="<c:url value='/css/egovframework/com/com.css' />" rel="stylesheet" type="text/css" />
 
 <script language="javascript">
@@ -14,23 +14,27 @@ function fncGoAfterErrorPage(){
 }
 </script>
 </head>
+
 <body>
+
 <div style="width: 1000px; margin: 50px auto 50px;">
-	<p style="font-size: 18px; color: #000; margin-bottom: 10px; "><img width="236px" height="65px" alt="egovframe" src="<c:url value='/images/egovframework/com/cmm/main/lob_logo.png'/>" /></p>
+
+	<p style="font-size: 18px; color: #000; margin-bottom: 10px; "><img width="236px" height="65px" src="<c:url value='/images/egovframework/com/cmm/main/lob_logo.png'/>" alt="egovframe" /></p>
 	<div style="border: 0px solid #666; padding: 20px;">
 		<!-- 404 -->
-		<p style="color:red; margin-bottom: 8px; ">500 Error</p>
+		<p style="color:red; margin-bottom: 8px; ">403 Error</p>
 
 		<div class="boxType1" style="width: 500px;">
 			<div class="box">
 				<div class="error">
-					<p class="title">HTTP 500 Error</p>
-					<p class="cont mb20">HTTP 500 Internal Server error.<br /></p>
+					<p class="title">HTTP 403 Error</p>
+					<p class="cont mb20">접근이 금지된 페이지입니다.<br /></p>
 					<span class="btn_style1 blue"><a href="javascript:fncGoAfterErrorPage();">이전 페이지</a></span>
 				</div>
 			</div>
 		</div>
 	</div>
+
 </div>
 
 </body>
